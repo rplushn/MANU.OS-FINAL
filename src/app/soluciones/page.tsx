@@ -1,14 +1,14 @@
 "use client";
 
+import Image from "next/image";
+
 import {
   Code,
   Workflow,
   Database,
   Smartphone,
-  CheckCircle2,
 } from "lucide-react";
 import { motion } from "motion/react";
-import Image from "next/image";
 
 import { Background } from "@/components/background";
 import { DashedLine } from "@/components/dashed-line";
