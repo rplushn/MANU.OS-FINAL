@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import Marquee from "react-fast-marquee";
-
 import { cn } from "@/lib/utils";
 
 type Company = {
@@ -109,73 +107,74 @@ type LogoRowProps = {
 };
 
 const LogoRow = ({ companies, gridClassName, direction }: LogoRowProps) => {
-  // Duplicar los logos 6 veces para asegurar scroll continuo en pantallas grandes
-  const duplicatedCompanies = [
-    ...companies,
-    ...companies,
-    ...companies,
-    ...companies,
-    ...companies,
-    ...companies,
-  ];
+  // Renderizar un grupo de logos
+  const renderLogoGroup = (groupIndex: number) => (
+    <div
+      key={groupIndex}
+      className="flex shrink-0 items-center gap-x-20 lg:gap-x-28"
+    >
+      {companies.map((company, index) => (
+        <Link
+          href={company.href}
+          target="_blank"
+          key={`${company.name}-${groupIndex}-${index}`}
+          className="shrink-0 transition-opacity hover:opacity-70"
+        >
+          {company.useText ? (
+            <div className="text-muted-foreground whitespace-nowrap text-sm font-medium opacity-50 transition-opacity hover:opacity-70">
+              {company.name}
+            </div>
+          ) : (
+            <Image
+              src={company.logo}
+              alt={`${company.name} logo`}
+              width={company.width}
+              height={company.height}
+              className="h-8 w-auto max-w-[150px] object-contain opacity-50 transition-opacity hover:opacity-70 dark:opacity-100 dark:invert"
+            />
+          )}
+        </Link>
+      ))}
+    </div>
+  );
+
+  const isReverse = direction === "right";
+  const animationClass = isReverse
+    ? "animate-scroll-reverse"
+    : "animate-scroll";
 
   return (
-    <>
-      {/* Desktop marquee version */}
-      <div className="hidden md:block">
-        <Marquee direction={direction} pauseOnHover>
-          {duplicatedCompanies.map((company, index) => (
-            <Link
-              href={company.href}
-              target="_blank"
-              key={`${company.name}-${index}`}
-              className="mx-8 inline-block transition-opacity hover:opacity-70"
-            >
-              {company.useText ? (
-                <div className="text-muted-foreground whitespace-nowrap text-sm font-medium opacity-50 transition-opacity hover:opacity-70">
-                  {company.name}
-                </div>
-              ) : (
-                <Image
-                  src={company.logo}
-                  alt={`${company.name} logo`}
-                  width={company.width}
-                  height={company.height}
-                  className="h-8 w-auto max-w-[150px] object-contain opacity-50 transition-opacity hover:opacity-70 dark:opacity-100 dark:invert"
-                />
-              )}
-            </Link>
-          ))}
-        </Marquee>
-      </div>
+    <div className="relative w-full overflow-hidden">
+      {/* Mask gradient para suavizar bordes */}
+      <div
+        className="absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-background to-transparent pointer-events-none"
+        style={{
+          maskImage: "linear-gradient(to right, black, transparent)",
+          WebkitMaskImage: "linear-gradient(to right, black, transparent)",
+        }}
+      />
+      <div
+        className="absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-background to-transparent pointer-events-none"
+        style={{
+          maskImage: "linear-gradient(to left, black, transparent)",
+          WebkitMaskImage: "linear-gradient(to left, black, transparent)",
+        }}
+      />
 
-      {/* Mobile marquee version */}
-      <div className="md:hidden">
-        <Marquee direction={direction} pauseOnHover>
-          {duplicatedCompanies.map((company, index) => (
-            <Link
-              href={company.href}
-              target="_blank"
-              key={`${company.name}-${index}`}
-              className="mx-8 inline-block transition-opacity hover:opacity-70"
-            >
-              {company.useText ? (
-                <div className="text-muted-foreground whitespace-nowrap text-sm font-medium">
-                  {company.name}
-                </div>
-              ) : (
-                <Image
-                  src={company.logo}
-                  alt={`${company.name} logo`}
-                  width={company.width}
-                  height={company.height}
-                  className="h-8 w-auto max-w-[150px] object-contain"
-                />
-              )}
-            </Link>
-          ))}
-        </Marquee>
+      {/* Contenedor deslizante con dos grupos idénticos */}
+      <div
+        className={cn(
+          "flex items-center",
+          animationClass,
+          "hover:[animation-play-state:paused]",
+        )}
+        style={{
+          width: "fit-content",
+        }}
+      >
+        {renderLogoGroup(0)}
+        {renderLogoGroup(1)}
       </div>
-    </>
+    </div>
   );
 };
