@@ -14,7 +14,14 @@ import {
 import { cn } from "@/lib/utils";
 import { handleWhatsAppClick } from "@/lib/whatsapp";
 
-const ITEMS = [
+interface NavItem {
+  label: string;
+  href: string;
+  isExternal?: boolean;
+  isWhatsApp?: boolean;
+}
+
+const ITEMS: NavItem[] = [
   { label: "Desarrollo", href: "/desarrollo", isExternal: false },
   { label: "Soluciones", href: "/soluciones", isExternal: false },
   { label: "Consultoría", href: "/consultoria", isExternal: false },

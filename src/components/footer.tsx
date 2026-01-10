@@ -1,9 +1,12 @@
 "use client";
 
-import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
+
+import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
 import { motion } from "motion/react";
+
 import { cn } from "@/lib/utils";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
