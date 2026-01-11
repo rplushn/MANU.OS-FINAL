@@ -42,7 +42,6 @@ export const Hero = () => {
   return (
     <section className="py-28 lg:py-32 lg:pt-44">
       <div className="container flex flex-col justify-between gap-8 md:gap-14 lg:flex-row lg:gap-20">
-        {/* Left side - Main content */}
         <div className="flex-1">
           <motion.h1
             initial={{ opacity: 0 }}
@@ -77,7 +76,6 @@ export const Hero = () => {
           </div>
         </div>
 
-        {/* Right side - Features */}
         <div className="relative flex flex-1 flex-col justify-center space-y-5 max-lg:pt-10 lg:pl-10">
           <DashedLine
             orientation="vertical"
