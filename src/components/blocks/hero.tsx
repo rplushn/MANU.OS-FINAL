@@ -41,7 +41,7 @@ const features = [
 export const Hero = () => {
   return (
     <section className="flex min-h-[80vh] flex-col justify-center pt-32 pb-28 lg:py-32 lg:pt-44">
-      <div className="container flex flex-col justify-center items-center gap-8 md:gap-14 lg:flex-row lg:gap-[60px] lg:pl-[150px] lg:pr-6 mt-[60px]">
+      <div className="w-full px-6 flex flex-col justify-center items-center gap-8 md:gap-14 lg:flex-row lg:gap-[60px] lg:px-[150px] mt-[60px]">
         {/* Left side - Main content */}
         <div className="flex-1">
           <motion.h1
