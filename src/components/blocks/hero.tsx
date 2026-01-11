@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-
 import {
   ArrowRight,
   Blend,
@@ -10,7 +9,6 @@ import {
   Diamond,
 } from "lucide-react";
 import { motion } from "motion/react";
-
 import { DashedLine } from "@/components/dashed-line";
 import { Button } from "@/components/ui/button";
 import { handleWhatsAppClick } from "@/lib/whatsapp";
@@ -40,15 +38,18 @@ const features = [
 
 export const Hero = () => {
   return (
-    <section className="flex min-h-[80vh] flex-col justify-center pt-32 pb-28 lg:py-32 lg:pt-44">
-      <div className="container flex flex-col justify-between gap-8 md:gap-14 lg:flex-row lg:gap-20">
+    <section className="flex min-h-[80vh] flex-col justify-center pt-32 pb-28 lg:py-32 lg:pt-44 overflow-hidden">
+      {/* ADDED: px-4 to prevent text touching edges on mobile */}
+      <div className="container px-4 flex flex-col justify-between gap-8 md:gap-14 lg:flex-row lg:gap-20">
+        
         {/* Left side - Main content */}
         <div className="flex-1">
           <motion.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-            className="text-foreground max-w-4xl text-6xl font-black leading-tight tracking-tight md:text-7xl"
+            // FIX: Changed text-6xl to text-4xl for mobile to prevent overflow
+            className="text-foreground max-w-4xl text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight"
           >
             Soluciones Tecnológicas Integrales para Honduras
           </motion.h1>
@@ -85,7 +86,7 @@ export const Hero = () => {
           />
           <DashedLine
             orientation="horizontal"
-            className="absolute top-0 lg:hidden"
+            className="absolute top-0 lg:hidden w-full" 
           />
           {features.map((feature) => {
             const Icon = feature.icon;
@@ -110,9 +111,10 @@ export const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-        className="mt-12 max-lg:px-6 max-lg:h-[550px] max-lg:overflow-hidden md:mt-20 lg:container lg:mt-24"
+        // Adjusted padding and removed overflow-hidden hack if not needed, but kept purely for safety
+        className="mt-12 w-full px-4 md:px-0 md:mt-20 lg:container lg:mt-24"
       >
-        <div className="relative h-[793px] w-full">
+        <div className="relative aspect-[4/5] md:aspect-[16/9] w-full max-h-[800px]">
           <Image
             src="/heroweb6.jpg"
             alt="hero"
