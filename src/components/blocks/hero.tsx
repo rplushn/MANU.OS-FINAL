@@ -41,15 +41,14 @@ const features = [
 export const Hero = () => {
   return (
     <section className="flex min-h-[80vh] flex-col justify-center py-28 lg:py-32 lg:pt-44">
-      <div className="container flex flex-col justify-center items-center gap-8 md:gap-14 lg:flex-row lg:gap-[60px]" style={{ paddingLeft: '6px', paddingRight: '6px', marginLeft: '150px', marginRight: '0px', marginTop: '60px' }}>
+      <div className="container flex flex-col justify-center items-center gap-8 md:gap-14 lg:flex-row lg:gap-[60px] w-full px-4 sm:px-6 md:pl-[150px] md:pr-6 mt-[60px]">
         {/* Left side - Main content */}
-        <div className="flex-1" style={{ marginLeft: '-20px' }}>
+        <div className="flex-1">
           <motion.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
             className="text-foreground max-w-4xl text-6xl font-black leading-tight tracking-tight md:text-7xl"
-            style={{ marginLeft: '0px' }}
           >
             Soluciones Tecnológicas Integrales para Honduras
           </motion.h1>
@@ -79,7 +78,7 @@ export const Hero = () => {
         </div>
 
         {/* Right side - Features */}
-        <div className="relative flex flex-1 flex-col justify-center space-y-5 max-lg:pt-10" style={{ marginRight: '0px', marginLeft: '100px' }}>
+        <div className="relative flex flex-1 flex-col justify-center space-y-5 max-lg:pt-10 lg:ml-[100px]">
           <DashedLine
             orientation="vertical"
             className="absolute top-0 left-0 max-lg:hidden"
