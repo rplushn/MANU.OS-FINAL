@@ -38,21 +38,20 @@ const features = [
 
 export const Hero = () => {
   return (
-    // FIX 1: 'overflow-hidden' aquí es CLAVE para cortar cualquier desbordamiento fantasma
-    <section className="flex min-h-[80vh] flex-col justify-center pt-32 pb-28 lg:py-32 lg:pt-44 overflow-hidden w-full">
+    // CAMBIO RADICAL 1: w-full y overflow-hidden forzado aquí
+    <section className="relative w-full max-w-[100vw] overflow-x-hidden flex flex-col justify-center pt-32 pb-28 lg:py-32 lg:pt-44">
       
-      {/* FIX 2: Agregado 'px-5' para que el texto no toque los bordes en móvil */}
-      <div className="container px-5 mx-auto flex flex-col justify-between gap-10 md:gap-14 lg:flex-row lg:gap-20">
+      {/* CAMBIO RADICAL 2: px-4 obligatorio y w-full explícito */}
+      <div className="container w-full px-4 md:px-6 mx-auto flex flex-col justify-between gap-10 lg:flex-row lg:gap-20">
         
-        {/* Left side - Main content */}
-        <div className="flex-1 z-10">
+        {/* Left side */}
+        <div className="flex-1 w-full max-w-full">
           <motion.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-            // FIX 3: IMPORTANTE: text-4xl en móvil (no 6xl) para que 'Tecnológicas' quepa en pantalla
-            // break-words asegura que si una palabra es muy larga, se parta en vez de romper el layout
-            className="text-foreground max-w-4xl text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight break-words"
+            // CAMBIO RADICAL 3: text-4xl en móvil, y break-words para partir palabras largas si es necesario
+            className="text-foreground text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight break-words hyphens-auto"
           >
             Soluciones Tecnológicas Integrales para Honduras
           </motion.h1>
@@ -61,19 +60,16 @@ export const Hero = () => {
             Somos MANU.OS. Desarrollamos plataformas web, automatizamos procesos y conectamos tu empresa con las mejores APIs del mundo para reducir costos y escalar operaciones.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-4 lg:flex-nowrap">
+          <div className="mt-8 flex flex-wrap items-center gap-4">
             <Button onClick={handleWhatsAppClick}>
               Agendar Consultoría
             </Button>
             <Button
               variant="outline"
-              className="from-background h-auto gap-2 bg-linear-to-r to-transparent shadow-md"
+              className="gap-2 shadow-md"
               asChild
             >
-              <a
-                href="#soluciones"
-                className="max-w-56 truncate text-start md:max-w-none"
-              >
+              <a href="#soluciones">
                 Ver Servicios
                 <ArrowRight className="stroke-3" />
               </a>
@@ -81,27 +77,27 @@ export const Hero = () => {
           </div>
         </div>
 
-        {/* Right side - Features */}
-        <div className="relative flex flex-1 flex-col justify-center space-y-5 max-lg:pt-10">
+        {/* Right side */}
+        <div className="relative flex flex-1 flex-col justify-center space-y-5 max-lg:pt-10 w-full">
           <DashedLine
             orientation="vertical"
             className="absolute top-0 left-0 max-lg:hidden"
           />
-          {/* FIX 4: Asegurar que la línea punteada no sea más ancha que el contenedor */}
-          <DashedLine
-            orientation="horizontal"
-            className="absolute top-0 lg:hidden w-full max-w-full"
-          />
+          {/* CAMBIO RADICAL 4: Ocultar dashed line horizontal si causa problemas de ancho */}
+          <div className="lg:hidden w-full overflow-hidden">
+             <DashedLine orientation="horizontal" className="w-full" />
+          </div>
+
           {features.map((feature) => {
             const Icon = feature.icon;
             return (
-              <div key={feature.title} className="flex gap-2.5 lg:gap-5 items-start">
-                <Icon className="text-foreground mt-1 size-4 shrink-0 lg:size-5" />
-                <div>
-                  <h2 className="font-text text-foreground font-semibold leading-tight">
+              <div key={feature.title} className="flex gap-3 items-start w-full">
+                <Icon className="text-foreground mt-1 size-5 shrink-0" />
+                <div className="flex-1 min-w-0"> {/* min-w-0 permite que el flex hijo se encoja */}
+                  <h2 className="font-semibold text-foreground leading-tight">
                     {feature.title}
                   </h2>
-                  <p className="text-muted-foreground max-w-76 text-sm mt-1">
+                  <p className="text-muted-foreground text-sm mt-1 break-words">
                     {feature.description}
                   </p>
                 </div>
@@ -114,15 +110,15 @@ export const Hero = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-        className="mt-12 w-full px-5 md:px-0 md:mt-20 lg:container lg:mx-auto lg:mt-24"
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="mt-12 w-full px-4 md:px-0 md:mt-20 lg:container lg:mx-auto"
       >
         <div className="relative aspect-[4/5] md:aspect-[16/9] w-full max-h-[800px] overflow-hidden rounded-2xl shadow-lg">
           <Image
             src="/heroweb6.jpg"
             alt="hero"
             fill
-            className="object-cover object-left-top"
+            className="object-cover object-top"
           />
         </div>
       </motion.div>
