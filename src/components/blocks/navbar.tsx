@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
-
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Menu, X } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -22,9 +23,9 @@ interface NavItem {
 }
 
 const ITEMS: NavItem[] = [
-  { label: "Desarrollo", href: "/desarrollo", isExternal: false },
   { label: "Soluciones", href: "/soluciones", isExternal: false },
-  { label: "Consultoría", href: "/consultoria", isExternal: false },
+  { label: "Procesos", href: "/procesos", isExternal: false },
+  { label: "Precios", href: "/pricing", isExternal: false },
   { label: "Contacto", href: "/contacto", isExternal: false },
 ];
 
