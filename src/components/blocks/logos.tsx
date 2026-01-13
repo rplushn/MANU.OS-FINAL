@@ -73,14 +73,13 @@ export const Logos = () => {
   return (
     <section className="pb-28 lg:pb-32 overflow-hidden">
       <div className="container space-y-10 lg:space-y-16">
-        <div className="text-center px-4">
-          <h2 className="mb-4 text-xl text-balance md:text-2xl lg:text-3xl">
+        <div className="text-center px-4 max-w-4xl mx-auto">
+          <h2 className="mb-4 text-3xl font-bold tracking-tight text-balance md:text-4xl lg:text-5xl">
             Integramos tu empresa con las mejores tecnologías globales.
-            <br className="max-md:hidden" />
-            <span className="text-muted-foreground">
-              Conectamos tus sistemas locales con el ecosistema digital mundial para potenciar tu crecimiento.
-            </span>
           </h2>
+          <p className="text-muted-foreground text-lg md:text-xl lg:text-2xl mt-4">
+            Conectamos tus sistemas locales con el ecosistema digital mundial para potenciar tu crecimiento.
+          </p>
         </div>
 
         <div className="flex w-full flex-col items-center gap-8">
