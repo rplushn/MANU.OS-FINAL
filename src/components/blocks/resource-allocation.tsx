@@ -12,7 +12,7 @@ const topItems = [
       "Analizamos tu infraestructura actual para proponer mejoras escalables.",
     images: [
       {
-        src: "/features/consultoria80px.jpg",
+        src: "/features/consultoriasoftware5.svg",
         alt: "Issue template interface",
         width: 205,
         height: 80,
