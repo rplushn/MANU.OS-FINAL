@@ -1,3 +1,4 @@
+import { Background } from "@/components/background";
 import { FAQ } from "@/components/blocks/faq";
 import { Features } from "@/components/blocks/features";
 import { Hero } from "@/components/blocks/hero";
@@ -8,27 +9,23 @@ import { Testimonials } from "@/components/blocks/testimonials";
 
 export default function Home() {
   return (
-    <div className="relative flex flex-col w-full">
-      
-      {/* CAPA DE FONDO (Restaurada): Se posiciona detrás de todo, incluso del Header */}
-      <div className="absolute top-0 left-0 right-0 h-[800px] -z-10 bg-gradient-to-b from-background via-muted to-muted/80" />
-
-      {/* Contenido Principal */}
-      <div className="w-full">
+    <>
+      {/* Sección Hero con fondo gris/ghost */}
+      <Background className="bg-gradient-to-b from-background via-muted to-muted/80">
         <Hero />
         <Logos />
         <Features />
         <ResourceAllocation />
-      </div>
+      </Background>
 
-      {/* Sección Testimonios (Fondo limpio por defecto) */}
+      {/* Sección Testimonios */}
       <Testimonials />
 
-      {/* Sección Final (Pricing + FAQ) con su propio fondo */}
-      <div className="w-full bg-gradient-to-t from-background to-muted/50 pb-20">
+      {/* Sección Final (Pricing + FAQ) con fondo degradado */}
+      <Background variant="bottom" className="bg-gradient-to-t from-background to-muted/50 pb-20">
         <Pricing />
         <FAQ />
-      </div>
-    </div>
+      </Background>
+    </>
   );
 }
