@@ -56,9 +56,9 @@ const Contact16 = ({ className }: Contact16Props) => {
               </a>
               <a
                 className="flex items-center gap-1 text-foreground/40 hover:text-foreground transition-colors"
-                href="mailto:hola@manuos.io"
+                href="mailto:soporte@koddix.com"
               >
-                <Mail className="h-4 w-4" /> hola@manuos.io
+                <Mail className="h-4 w-4" /> soporte@koddix.com
               </a>
             </div>
           </div>
