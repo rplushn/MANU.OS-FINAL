@@ -1,4 +1,3 @@
-import { Background } from "@/components/background";
 import { FAQ } from "@/components/blocks/faq";
 import { Features } from "@/components/blocks/features";
 import { Hero } from "@/components/blocks/hero";
@@ -9,18 +8,23 @@ import { Testimonials } from "@/components/blocks/testimonials";
 
 export default function Home() {
   return (
-    <>
-      <Background className="via-muted to-muted/80">
+    <div className="flex flex-col w-full">
+      {/* Sección Superior: Hero + Features */}
+      <div className="w-full bg-gradient-to-b from-background via-muted to-muted/80">
         <Hero />
         <Logos />
         <Features />
         <ResourceAllocation />
-      </Background>
+      </div>
+
+      {/* Sección Media */}
       <Testimonials />
-      <Background variant="bottom">
+
+      {/* Sección Inferior: Pricing + FAQ */}
+      <div className="w-full bg-gradient-to-t from-background to-muted/50 pb-20">
         <Pricing />
         <FAQ />
-      </Background>
-    </>
+      </div>
+    </div>
   );
 }
