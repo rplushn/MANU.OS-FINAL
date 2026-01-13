@@ -36,12 +36,12 @@ export const Navbar = () => {
   return (
     <section
       className={cn(
-        "bg-background/70 absolute left-1/2 z-50 w-[min(90%,750px)] -translate-x-1/2 rounded-4xl border backdrop-blur-md transition-all duration-300",
+        "bg-background/70 absolute left-1/2 z-50 w-[min(95%,950px)] -translate-x-1/2 rounded-4xl border backdrop-blur-md transition-all duration-300",
         "top-5 lg:top-12",
       )}
     >
-      <div className="flex items-center justify-between px-6 py-3">
-        <Link href="/" className="flex shrink-0 items-center gap-2">
+      <div className="flex items-center justify-between px-8 py-3.5">
+        <Link href="/" className="flex shrink-0 items-center gap-2 mr-8">
           <span 
             className="text-2xl font-black tracking-[-1.4px]"
             style={{ fontFamily: '"Roboto", -apple-system, BlinkMacSystemFont, sans-serif' }}
@@ -52,14 +52,14 @@ export const Navbar = () => {
 
         {/* Desktop Navigation */}
         <NavigationMenu className="max-lg:hidden">
-          <NavigationMenuList className="gap-1">
+          <NavigationMenuList className="gap-2">
             {ITEMS.map((link) => (
               <NavigationMenuItem key={link.label} className="">
                 {link.isWhatsApp ? (
                   <button
                     onClick={handleWhatsAppClick}
                     className={cn(
-                      "relative bg-transparent px-3 py-2 text-sm font-medium transition-opacity hover:opacity-75 cursor-pointer",
+                      "relative bg-transparent px-4 py-2 text-sm font-medium transition-opacity hover:opacity-75 cursor-pointer",
                     )}
                   >
                     {link.label}
@@ -68,7 +68,7 @@ export const Navbar = () => {
                   <Link
                     href={link.href}
                     className={cn(
-                      "relative bg-transparent px-3 py-2 text-sm font-medium transition-opacity hover:opacity-75",
+                      "relative bg-transparent px-4 py-2 text-sm font-medium transition-opacity hover:opacity-75",
                       pathname === link.href && "text-muted-foreground",
                     )}
                   >
@@ -81,11 +81,11 @@ export const Navbar = () => {
         </NavigationMenu>
 
         {/* Auth Buttons */}
-        <div className="flex items-center gap-2.5">
+        <div className="flex items-center gap-4 ml-4">
           <Button
             variant="outline"
             onClick={handleWhatsAppClick}
-            className="max-lg:hidden"
+            className="max-lg:hidden px-6"
           >
             <span className="relative z-10">Agendar Cita</span>
           </Button>
