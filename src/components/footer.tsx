@@ -1,106 +1,118 @@
-import { cn } from "@/lib/utils";
-
+import Link from "next/link";
+import { Phone, Mail, MapPin } from "lucide-react";
 import { Globe } from "@/components/magicui/globe";
 import { Separator } from "@/components/ui/separator";
 
-const sections = [
+const navigationSections = [
   {
-    title: "Product",
+    title: "SERVICIOS",
     links: [
-      { name: "Overview", href: "#" },
-      { name: "Pricing", href: "#" },
-      { name: "Marketplace", href: "#" },
-      { name: "Features", href: "#" },
+      { name: "Desarrollo de Software", href: "/desarrollo" },
+      { name: "Soluciones Integrales", href: "/soluciones" },
+      { name: "Consultoría", href: "/consultoria" },
     ],
   },
   {
-    title: "Company",
+    title: "EMPRESA",
     links: [
-      { name: "About", href: "#" },
-      { name: "Team", href: "#" },
-      { name: "Blog", href: "#" },
-      { name: "Careers", href: "#" },
+      { name: "Sobre Nosotros", href: "/about" },
+      { name: "Contacto", href: "/contacto" },
+      { name: "Precios", href: "/pricing" },
     ],
   },
   {
-    title: "Resources",
+    title: "LEGAL",
     links: [
-      { name: "Help", href: "#" },
-      { name: "Sales", href: "#" },
-      { name: "Advertise", href: "#" },
+      { name: "Privacidad", href: "/privacy" },
+      { name: "FAQ", href: "/faq" },
     ],
   },
 ];
 
-interface Footer23Props {
-  logo?: {
-    url: string;
-    src: string;
-    alt: string;
-    title: string;
-  };
-  className?: string;
-}
-const Footer23 = ({
-  logo = {
-    url: "https://www.shadcnblocks.com",
-    src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/shadcnblockscom-icon.svg",
-    alt: "logo",
-    title: "Shadcnblocks.com",
-  },
-  className,
-}: Footer23Props) => {
+export function Footer() {
   return (
-    <section className={cn("", className)}>
-      <div className="container">
-        <footer>
-          <Separator className="my-14" />
-          <div className="flex flex-col items-center justify-between gap-6 lg:flex-row">
-            <div className="lg:max-w-md">
-              <div className="flex items-center justify-start gap-2">
-                <a href="https://shadcnblocks.com">
-                  <img
-                    src={logo.src}
-                    alt={logo.alt}
-                    title={logo.title}
-                    className="h-10"
-                  />
-                </a>
-                <h2 className="text-xl font-semibold tracking-tight">
-                  {logo.title}
+    <footer className="bg-background relative overflow-hidden">
+      <div className="container relative z-20 pt-14">
+        <div className="flex flex-col gap-10 lg:flex-row lg:justify-between">
+          
+          {/* Columna Izquierda: Marca y Contacto */}
+          <div className="flex flex-col gap-6 lg:max-w-md">
+            <div>
+              <Link href="/" className="inline-block">
+                <h2 className="text-2xl font-black tracking-tight">
+                  KODDIX{" "}
+                  <span className="font-normal text-muted-foreground">
+                    HONDURAS
+                  </span>
                 </h2>
-              </div>
-              <p className="mt-4 text-left text-sm text-muted-foreground">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Reprehenderit consequuntur, corporis at recusandae nisi iste
-                quaerat maxime nihil. Iusto iure consequatur
+              </Link>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Ingeniería de software de clase mundial. Conectamos tu empresa con el futuro digital.
               </p>
             </div>
-            <div className="mt-8 flex w-full flex-wrap justify-between gap-12 lg:mt-0 lg:w-fit">
-              {sections.map((section, sectionIdx) => (
-                <div key={sectionIdx} className="mb-4">
-                  <h3 className="mb-4 font-semibold tracking-tight">
-                    {section.title}
-                  </h3>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    {section.links.map((link, linkIdx) => (
-                      <li key={linkIdx} className="hover:text-primary">
-                        <a href={link.href}>{link.name}</a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+
+            <div className="flex flex-col gap-3">
+              <a
+                href="https://wa.me/50489502917"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-sm font-medium transition-colors hover:text-primary"
+              >
+                <Phone className="h-4 w-4" />
+                <span>+504 8950-2917</span>
+              </a>
+              <a
+                href="mailto:soporte@koddix.com"
+                className="flex items-center gap-3 text-sm font-medium transition-colors hover:text-primary"
+              >
+                <Mail className="h-4 w-4" />
+                <span>soporte@koddix.com</span>
+              </a>
+              <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                <MapPin className="h-4 w-4" />
+                <span>Tegucigalpa, Honduras</span>
+              </div>
             </div>
           </div>
-          <div className="relative h-52 overflow-hidden lg:h-82">
-            <Globe className="absolute top-10 md:scale-125 lg:top-16 lg:scale-150" />
-          </div>
-        </footer>
-      </div>
-    </section>
-  );
-};
 
-// CAMBIO CRÍTICO AQUÍ: Exportamos como 'Footer' para que layout.tsx funcione
-export { Footer23 as Footer };
+          {/* Columna Derecha: Links */}
+          <div className="grid grid-cols-2 gap-10 sm:grid-cols-3">
+            {navigationSections.map((section, idx) => (
+              <div key={idx} className="flex flex-col gap-4">
+                <h3 className="text-xs font-semibold uppercase tracking-wider text-foreground">
+                  {section.title}
+                </h3>
+                <nav className="flex flex-col gap-2">
+                  {section.links.map((link, linkIdx) => (
+                    <Link
+                      key={linkIdx}
+                      href={link.href}
+                      className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
+                </nav>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <Separator className="my-10" />
+        
+        <div className="pb-8 text-center">
+          <p className="text-xs text-muted-foreground">
+            © 2026 Koddix. Todos los derechos reservados.
+          </p>
+        </div>
+      </div>
+
+      {/* SECCIÓN DEL GLOBO (Estilo Footer23 adaptado) */}
+      {/* Usamos un contenedor relativo con altura definida para asegurar que se vea */}
+      <div className="relative h-60 w-full overflow-hidden lg:h-80">
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
+        <Globe className="absolute top-10 left-1/2 -translate-x-1/2 scale-[2] md:scale-[1.5] lg:top-16 lg:scale-[1.8] opacity-100" />
+      </div>
+    </footer>
+  );
+}
