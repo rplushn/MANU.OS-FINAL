@@ -12,7 +12,7 @@ const CodeWindow = () => {
       initial={{ opacity: 0, y: 20, scale: 0.95 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-      className="relative w-full max-w-lg overflow-hidden rounded-xl border border-white/20 bg-black/90 shadow-2xl backdrop-blur-sm"
+      className="relative w-full max-w-lg mx-auto lg:mx-0 overflow-hidden rounded-xl border border-white/20 bg-black/90 shadow-2xl backdrop-blur-sm"
     >
       {/* Barra de título */}
       <div className="flex items-center gap-2 border-b border-white/10 bg-white/5 px-4 py-3">
@@ -115,18 +115,18 @@ const CodeWindow = () => {
 
 export const Hero = () => {
   return (
-    <section className="relative overflow-hidden py-8 lg:py-12 mb-20 lg:mb-24">
-      <div className="container relative z-10 mx-auto px-4">
+    <section className="relative overflow-x-hidden overflow-y-visible py-8 lg:py-12 mb-20 lg:mb-24">
+      <div className="container relative z-10 mx-auto px-4 w-full max-w-7xl">
         {/* Card Principal del Hero */}
-        <div className="relative overflow-hidden rounded-[2.5rem] bg-zinc-100 dark:bg-zinc-900 px-6 pt-32 pb-24 shadow-sm md:px-12 lg:px-20 lg:pt-40 lg:pb-32 -mt-12">
+        <div className="relative overflow-hidden w-full rounded-[2.5rem] bg-zinc-100 dark:bg-zinc-900 px-4 sm:px-6 pt-32 pb-24 shadow-sm md:px-12 lg:px-20 lg:pt-40 lg:pb-32 -mt-12">
           
           {/* Elementos decorativos de fondo */}
-          <div className="absolute -left-20 -top-20 size-96 rounded-full bg-blue-500/10 blur-3xl dark:bg-blue-500/20" />
-          <div className="absolute -bottom-20 -right-20 size-96 rounded-full bg-purple-500/10 blur-3xl dark:bg-purple-500/20" />
+          <div className="absolute -left-20 -top-20 size-96 rounded-full bg-blue-500/10 blur-3xl dark:bg-blue-500/20 pointer-events-none" />
+          <div className="absolute -bottom-20 -right-20 size-96 rounded-full bg-purple-500/10 blur-3xl dark:bg-purple-500/20 pointer-events-none" />
 
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div className="grid gap-8 sm:gap-12 lg:grid-cols-2 lg:items-center w-full">
             {/* Columna Izquierda: Texto */}
-            <div className="max-w-2xl mt-4">
+            <div className="w-full max-w-2xl mt-4">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -207,7 +207,7 @@ export const Hero = () => {
             </div>
 
             {/* Columna Derecha: Gráfico/Animación */}
-            <div className="relative flex justify-center lg:justify-end">
+            <div className="relative flex justify-center lg:justify-end w-full">
                <CodeWindow />
             </div>
           </div>
