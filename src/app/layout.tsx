@@ -1,121 +1,29 @@
-import { Inter } from "next/font/google";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
+import "./globals.css";
 
-import type { Metadata } from "next";
-
-import { Footer31 } from "@/components/footer31";
-import { Navbar } from "@/components/blocks/navbar";
-import { StyleGlideProvider } from "@/components/styleglide-provider";
-import { ThemeProvider } from "@/components/theme-provider";
-import { WhatsAppButton } from "@/components/whatsapp-button";
-import "@/styles/globals.css";
-
-const dmSans = localFont({
-  src: [
-    {
-      path: "../../fonts/dm-sans/DMSans-Regular.ttf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../fonts/dm-sans/DMSans-Italic.ttf",
-      weight: "400",
-      style: "italic",
-    },
-    {
-      path: "../../fonts/dm-sans/DMSans-Medium.ttf",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../../fonts/dm-sans/DMSans-MediumItalic.ttf",
-      weight: "500",
-      style: "italic",
-    },
-    {
-      path: "../../fonts/dm-sans/DMSans-SemiBold.ttf",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "../../fonts/dm-sans/DMSans-SemiBoldItalic.ttf",
-      weight: "600",
-      style: "italic",
-    },
-    {
-      path: "../../fonts/dm-sans/DMSans-Bold.ttf",
-      weight: "700",
-      style: "normal",
-    },
-    {
-      path: "../../fonts/dm-sans/DMSans-BoldItalic.ttf",
-      weight: "700",
-      style: "italic",
-    },
-  ],
-  variable: "--font-dm-sans",
-  display: "swap",
+const geistSans = localFont({
+  src: "./fonts/GeistVF.woff",
+  variable: "--font-geist-sans",
+  weight: "100 900",
+});
+const geistMono = localFont({
+  src: "./fonts/GeistMonoVF.woff",
+  variable: "--font-geist-mono",
+  weight: "100 900",
 });
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
 
 export const metadata: Metadata = {
-  title: {
-    default: "Koddix - Soluciones Digitales",
-    template: "%s | Koddix",
-  },
+  title: "Koddix - Ingeniería de Software y Soluciones Tecnológicas",
   description:
-    "Koddix - Transformando ideas en soluciones digitales. Desarrollo web, consultoría y más.",
-  keywords: [
-    "Koddix",
-    "Desarrollo Web",
-    "Consultoría Digital",
-    "Next.js",
-    "Tailwind",
-  ],
-  authors: [{ name: "Koddix Team" }],
-  creator: "Koddix",
-  publisher: "Koddix",
-  robots: {
-    index: true,
-    follow: true,
-  },
-  icons: {
-    icon: [
-      { url: "/favicon/favicon.ico", sizes: "48x48" },
-      { url: "/favicon/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon/favicon-96x96.png", sizes: "96x96", type: "image/png" },
-      { url: "/favicon/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon/favicon.ico" },
-    ],
-    apple: [{ url: "/favicon/apple-touch-icon.png", sizes: "180x180" }],
-    shortcut: [{ url: "/favicon/favicon.ico" }],
-  },
-  openGraph: {
-    title: "Koddix - Soluciones Digitales",
-    description:
-      "Koddix - Transformando ideas en soluciones digitales.",
-    siteName: "Koddix",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Koddix - Soluciones Digitales",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Koddix - Soluciones Digitales",
-    description:
-      "Koddix - Transformando ideas en soluciones digitales.",
-    images: ["/og-image.jpg"],
-    creator: "@koddix",
-  },
+    "Desarrollamos plataformas web, automatizamos procesos y conectamos tu empresa con el futuro digital.",
 };
 
 export default function RootLayout({
@@ -124,28 +32,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="bg-white">
-      <head>
-        <script
-          async
-          crossOrigin="anonymous"
-          src="https://tweakcn.com/live-preview.min.js"
-        />
-      </head>
-      <body className={`${dmSans.variable} ${inter.variable} antialiased bg-white min-h-screen flex flex-col`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem={false}
-          forcedTheme="light"
-          disableTransitionOnChange
-        >
-          <StyleGlideProvider />
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer31 />
-          <WhatsAppButton />
-        </ThemeProvider>
+    <html lang="es">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        {children}
       </body>
     </html>
   );
