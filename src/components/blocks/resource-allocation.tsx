@@ -12,13 +12,13 @@ const topItems = [
       "Analizamos tu infraestructura actual para proponer mejoras escalables.",
     images: [
       {
-        src: "/features/consultoriasoftware5.svg",
+        src: "/features/consultoriasoftware6.svg",
         alt: "Issue template interface",
-        width: 205,
-        height: 80,
+        width: 520,
+        height: 200,
       },
     ],
-    // ADDED: justify-start and gap-8 to override justify-between and control spacing manually
+    // Keep justify-start and gap-8 for good spacing
     className:
       "flex-1 justify-start gap-8 [&>.title-container]:mb-0 [&>.image-container]:mt-0",
     fade: [""],
@@ -237,7 +237,7 @@ const Item = ({ item, isLast, className }: ItemProps) => {
               alt={image.alt}
               width={image.width}
               height={image.height}
-              className="object-left-top"
+              className="object-left-top w-full h-auto" // Added w-full h-auto to make it responsive and fill width
             />
           ))}
         </div>
