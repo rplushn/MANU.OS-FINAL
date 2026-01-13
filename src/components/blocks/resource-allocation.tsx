@@ -20,8 +20,8 @@ const topItems = [
     ],
     className:
       "flex-1 justify-start gap-8 [&>.title-container]:mb-0 [&>.image-container]:mt-0",
-    // ADDED: "right" to fade array to trigger the gradient overlay
-    fade: ["right"],
+    // CHANGED: "right" to "left" to move the gradient
+    fade: ["left"],
   },
   {
     title: "Integración de APIs.",
@@ -188,9 +188,14 @@ const Item = ({ item, isLast, className }: ItemProps) => {
         <div className="from-muted/80 absolute inset-0 z-10 bg-linear-to-t via-transparent to-transparent md:hidden" />
       )}
       
-      {/* ADDED: Logic to render the right fade gradient if 'right' is in the fade array */}
+      {/* Renders right fade if 'right' is in the fade array */}
       {item.fade.includes("right") && (
          <div className="from-muted/80 absolute inset-y-0 right-0 z-10 w-20 bg-linear-to-l to-transparent pointer-events-none" />
+      )}
+      
+      {/* ADDED: Logic to render LEFT fade if 'left' is in the fade array */}
+      {item.fade.includes("left") && (
+         <div className="from-muted/80 absolute inset-y-0 left-0 z-10 w-20 bg-linear-to-r to-transparent pointer-events-none" />
       )}
 
       {item.images.length > 4 ? (
@@ -236,8 +241,6 @@ const Item = ({ item, isLast, className }: ItemProps) => {
         </div>
       ) : (
         <div className="image-container grid grid-cols-1 gap-4 mt-0 relative"> 
-          {/* Added 'relative' to container to ensure absolute positioned fade works if we wanted it inside, 
-              but the main fade is at 'Item' level. This just keeps it safe. */}
           {item.images.map((image, j) => (
             <Image
               key={j}
