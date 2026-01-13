@@ -41,13 +41,13 @@ export const Navbar = () => {
       )}
     >
       <div className="flex items-center justify-between px-8 py-3.5">
-        <Link href="/" className="flex shrink-0 items-center gap-2 mr-8">
-          <span 
-            className="text-2xl font-black tracking-[-1.4px]"
-            style={{ fontFamily: '"Roboto", -apple-system, BlinkMacSystemFont, sans-serif' }}
-          >
-            KODDIX
-          </span>
+        <Link href="/" className="inline-block mr-8">
+          <h1 className="text-xl font-black tracking-tight">
+            KODDIX{" "}
+            <span className="font-normal text-muted-foreground">
+              HONDURAS
+            </span>
+          </h1>
         </Link>
 
         {/* Desktop Navigation */}
