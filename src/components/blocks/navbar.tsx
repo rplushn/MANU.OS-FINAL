@@ -43,10 +43,10 @@ export const Navbar = () => {
       <div className="flex items-center justify-between px-6 py-3">
         <Link href="/" className="flex shrink-0 items-center gap-2">
           <span 
-            className="text-xl font-bold tracking-[-1.4px]"
+            className="text-2xl font-black tracking-[-1.4px]"
             style={{ fontFamily: '"Roboto", -apple-system, BlinkMacSystemFont, sans-serif' }}
           >
-            Koddix
+            KODDIX
           </span>
         </Link>
 
