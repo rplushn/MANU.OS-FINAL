@@ -45,7 +45,7 @@ export const Navbar = () => {
           <h1 className="text-xl font-black tracking-tight">
             KODDIX{" "}
             <span className="font-normal text-muted-foreground">
-              HONDURAS
+              HN
             </span>
           </h1>
         </Link>
