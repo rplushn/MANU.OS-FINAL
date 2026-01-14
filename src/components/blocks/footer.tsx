@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { Globe } from "@/components/magicui/globe";
 
@@ -31,15 +32,21 @@ const navigationSections = [
 export function Footer() {
   return (
     <footer className="bg-background relative overflow-hidden border-t">
-      <div className="container relative z-20 pt-14">
-        <div className="flex flex-col gap-10 lg:flex-row lg:justify-between">
+      <div className="container relative z-20 pt-12">
+        <div className="flex flex-col gap-10 lg:flex-row lg:justify-between lg:items-start">
           <div className="flex flex-col gap-6 lg:max-w-md">
             <div>
-              <Link href="/" className="inline-block">
-                <h2 className="text-2xl font-black tracking-tight">
-                  LINEAL<span className="font-normal text-muted-foreground ml-1">HN</span>
-                </h2>
-              </Link>
+              <div className="flex items-start">
+                <Link href="/" className="inline-block">
+                  <Image
+                    src="/features/lineal-logo1.svg"
+                    alt="LINEAL HN"
+                    width={352}
+                    height={80}
+                    className="block h-[52px] w-auto"
+                  />
+                </Link>
+              </div>
               <p className="mt-2 text-sm text-muted-foreground">
                 Ingeniería de software de clase mundial. Conectamos tu empresa con el futuro digital.
               </p>

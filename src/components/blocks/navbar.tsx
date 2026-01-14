@@ -44,7 +44,7 @@ export const Navbar = () => {
       <div className="flex items-center justify-between px-8 py-3.5">
         <Link href="/" className="inline-block mr-8 flex items-center">
           <Image
-            src="/features/lineal-logo2.svg"
+            src="/features/lineal-logo1.svg"
             alt="LINEAL Software & Cloud Solutions"
             width={352}
             height={80}

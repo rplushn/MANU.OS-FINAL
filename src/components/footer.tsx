@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { Globe } from "@/components/magicui/globe";
@@ -32,7 +33,7 @@ const navigationSections = [
 export function Footer() {
   return (
     <footer className="bg-background relative overflow-hidden">
-      <div className="container relative z-20 pt-14">
+      <div className="container relative z-20 pt-12">
         <div className="flex flex-col gap-10 lg:flex-row lg:justify-between">
           
           {/* Columna Izquierda: Marca y Contacto */}
@@ -62,11 +63,11 @@ export function Footer() {
                 <span>+504 8950-2917</span>
               </a>
               <a
-                href="mailto:soporte@koddix.com"
+                href="mailto:contacto@lineal.hn"
                 className="flex items-center gap-3 text-sm font-medium transition-colors hover:text-primary"
               >
                 <Mail className="h-4 w-4" />
-                <span>soporte@koddix.com</span>
+                <span>contacto@lineal.hn</span>
               </a>
               <div className="flex items-center gap-3 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4" />
