@@ -79,7 +79,7 @@ const DevOpsMarquee = () => {
           return (
             <div key={`${step.label}-${index}`} className="flex shrink-0 items-center gap-2">
               <div className="flex flex-col items-center gap-2">
-                <div className="flex size-12 items-center justify-center rounded-lg border bg-background">
+                <div className="flex size-12 items-center justify-center rounded-none border bg-background">
                   <Icon className="size-5" style={{ fontSize: '30px' }} />
                 </div>
                 <span className="text-muted-foreground text-sm font-medium" style={{ fontSize: '20px' }}>
@@ -100,13 +100,13 @@ const DevOpsMarquee = () => {
 // Componente de ventana de código simulada
 const CodeWindow = () => {
   return (
-    <div className="overflow-hidden rounded-lg border border-border/50 bg-[#1e1e1e] shadow-lg">
+    <div className="overflow-hidden rounded-none border border-border/50 bg-[#1e1e1e] shadow-lg">
       {/* Barra de título de ventana */}
       <div className="flex items-center gap-2 border-b border-border/20 bg-[#252526] px-4 py-2">
         <div className="flex gap-1.5">
-          <div className="size-3 rounded-full bg-[#ff5f56]" />
-          <div className="size-3 rounded-full bg-[#ffbd2e]" />
-          <div className="size-3 rounded-full bg-[#27c93f]" />
+          <div className="size-3 rounded-none bg-[#ff5f56]" />
+          <div className="size-3 rounded-none bg-[#ffbd2e]" />
+          <div className="size-3 rounded-none bg-[#27c93f]" />
         </div>
         <span className="ml-2 font-mono text-xs text-gray-400">
           App.tsx
@@ -121,7 +121,7 @@ const CodeWindow = () => {
             <span className="text-[#d4d4d4]">=</span>{" "}
             <span className="text-[#569cd6]">()</span>{" "}
             <span className="text-[#d4d4d4]">=&gt;</span>{" "}
-            <span className="text-[#d4d4d4]">{"{"}</span>
+            <span className="text-[#d4d4d4]">{'{'}</span>
           </div>
           <div className="pl-4">
             <span className="text-[#569cd6]">return</span>{" "}
@@ -147,7 +147,7 @@ const CodeWindow = () => {
             <span className="text-[#d4d4d4]">);</span>
           </div>
           <div>
-            <span className="text-[#d4d4d4]">{"};"}</span>
+            <span className="text-[#d4d4d4]">{'};'}</span>
           </div>
         </div>
       </div>
@@ -254,7 +254,7 @@ export default function DesarrolloPage() {
                       visible: { opacity: 1, y: 0 },
                     }}
                     transition={{ duration: 0.5 }}
-                    className="rounded-lg border p-4"
+                    className="rounded-none border p-4"
                   >
                     <div className="mb-2 font-mono text-base font-semibold">
                       {tech.title}
@@ -287,14 +287,14 @@ export default function DesarrolloPage() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="relative h-64 overflow-hidden rounded-xl shadow-lg lg:h-80"
+              className="relative h-64 overflow-hidden rounded-none shadow-lg lg:h-80"
             >
               <Image
                 src="/features/frontend2.jpg"
                 alt="Desarrollo Frontend Moderno"
                 width={600}
                 height={400}
-                className="rounded-xl shadow-lg object-cover w-full h-full"
+                className="rounded-none shadow-lg object-cover w-full h-full"
               />
             </motion.div>
           </div>
@@ -316,17 +316,17 @@ export default function DesarrolloPage() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="relative h-64 overflow-hidden rounded-xl shadow-lg lg:h-80 lg:order-1"
+              className="relative h-64 overflow-hidden rounded-none shadow-lg lg:h-80 lg:order-1"
             >
               <Image
                 src="/features/frontend1.jpg"
                 alt="Arquitectura Backend Escalable"
                 width={600}
                 height={400}
-                className="rounded-xl shadow-lg object-cover w-full h-full"
+                className="rounded-none shadow-lg object-cover w-full h-full"
               />
             </motion.div>
-            <div className="rounded-2xl bg-muted/30 p-8 md:p-12 lg:order-2">
+            <div className="rounded-none bg-muted/30 p-8 md:p-12 lg:order-2">
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -371,7 +371,7 @@ export default function DesarrolloPage() {
                       visible: { opacity: 1, y: 0 },
                     }}
                     transition={{ duration: 0.5 }}
-                    className="rounded-lg border border-border/50 bg-background p-4"
+                    className="rounded-none border border-border/50 bg-background p-4"
                   >
                     <div className="mb-2 font-mono text-base font-semibold">
                       {tech.title}
@@ -418,7 +418,7 @@ export default function DesarrolloPage() {
                 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
               >
-                <Card className="h-full border-border/50 transition-colors hover:bg-muted/30">
+                <Card className="h-full border-border/50 transition-colors hover:bg-muted/30 rounded-none">
                   <CardContent className="p-6">
                     <h3 className="mb-2 text-2xl font-semibold">
                       {project.title}
@@ -475,7 +475,7 @@ export default function DesarrolloPage() {
                       visible: { opacity: 1, x: 0 },
                     }}
                     transition={{ duration: 0.5 }}
-                    className="flex items-center gap-3 rounded-lg border border-border/50 p-4"
+                    className="flex items-center gap-3 rounded-none border border-border/50 p-4"
                   >
                     <CheckCircle2 className="size-5 shrink-0 text-primary" />
                     <span className="font-medium">{item}</span>
@@ -487,14 +487,14 @@ export default function DesarrolloPage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="relative h-64 overflow-hidden rounded-xl shadow-lg lg:h-80"
+                className="relative h-64 overflow-hidden rounded-none shadow-lg lg:h-80"
               >
                 <Image
                   src="/resource-allocation/soportelocal.jpg"
                   alt="Soporte y Calidad"
                   width={600}
                   height={400}
-                  className="rounded-xl shadow-lg object-cover w-full h-full"
+                  className="rounded-none shadow-lg object-cover w-full h-full"
                 />
               </motion.div>
             </div>
@@ -541,7 +541,7 @@ export default function DesarrolloPage() {
                   visible: { opacity: 1, scale: 1 },
                 }}
                 transition={{ duration: 0.5 }}
-                className="flex items-center gap-2 rounded-lg border border-border/50 bg-background px-6 py-3"
+                className="flex items-center gap-2 rounded-none border border-border/50 bg-background px-6 py-3"
               >
                 <Cloud className="size-5" />
                 <span className="font-mono text-lg font-semibold">
@@ -567,7 +567,7 @@ export default function DesarrolloPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="rounded-3xl border border-border/50 bg-primary p-8 text-center text-white md:p-12 lg:p-16"
+            className="rounded-none border border-border/50 bg-primary p-8 text-center text-white md:p-12 lg:p-16"
           >
             <motion.h2
               initial={{ opacity: 0, y: 10 }}
