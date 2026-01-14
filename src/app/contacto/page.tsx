@@ -143,14 +143,14 @@ export default function ContactPage() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="relative overflow-hidden rounded-2xl"
+                className="relative overflow-hidden rounded-none"
               >
                 <Image
                   src="/features/soportelocal.jpg"
                   alt="Contacto MANU.OS"
                   width={600}
                   height={500}
-                  className="h-full w-full rounded-2xl object-cover"
+                  className="h-full w-full rounded-none object-cover"
                 />
               </motion.div>
             </div>
@@ -169,7 +169,7 @@ export default function ContactPage() {
           <h2 className="mb-12 text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
             Nuestra Base de Operaciones
           </h2>
-          <div className="relative overflow-hidden rounded-2xl">
+          <div className="relative overflow-hidden rounded-none">
             <div className="relative h-[400px] w-full md:h-[500px]">
               <Image
                 src="/features/tegucigalpa.jpg"
@@ -178,7 +178,7 @@ export default function ContactPage() {
                 className="object-cover brightness-75"
               />
               <div className="absolute inset-0 bg-black/30" />
-              <div className="absolute bottom-6 left-6 rounded-lg bg-background/95 px-6 py-4 shadow-xl backdrop-blur-sm">
+              <div className="absolute bottom-6 left-6 rounded-none bg-background/95 px-6 py-4 shadow-xl backdrop-blur-sm">
                 <div className="flex items-center gap-2">
                   <MapPin className="h-5 w-5 text-primary" />
                   <span className="text-lg font-semibold">
@@ -198,9 +198,9 @@ export default function ContactPage() {
             Canales de Atención
           </h2>
           <div className="grid gap-6 md:grid-cols-3">
-            <Card className="border-border/50 bg-background/50 transition-colors hover:bg-background/80">
+            <Card className="border-border/50 bg-background/50 transition-colors hover:bg-background/80 rounded-none">
               <CardContent className="p-6">
-                <div className="mb-4 flex size-12 items-center justify-center rounded-lg bg-primary/10">
+                <div className="mb-4 flex size-12 items-center justify-center rounded-none bg-primary/10">
                   <DollarSign className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="mb-2 text-xl font-semibold">Ventas</h3>
@@ -217,9 +217,9 @@ export default function ContactPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-border/50 bg-background/50 transition-colors hover:bg-background/80">
+            <Card className="border-border/50 bg-background/50 transition-colors hover:bg-background/80 rounded-none">
               <CardContent className="p-6">
-                <div className="mb-4 flex size-12 items-center justify-center rounded-lg bg-primary/10">
+                <div className="mb-4 flex size-12 items-center justify-center rounded-none bg-primary/10">
                   <LifeBuoy className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="mb-2 text-xl font-semibold">Soporte</h3>
@@ -236,9 +236,9 @@ export default function ContactPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-border/50 bg-background/50 transition-colors hover:bg-background/80">
+            <Card className="border-border/50 bg-background/50 transition-colors hover:bg-background/80 rounded-none">
               <CardContent className="p-6">
-                <div className="mb-4 flex size-12 items-center justify-center rounded-lg bg-primary/10">
+                <div className="mb-4 flex size-12 items-center justify-center rounded-none bg-primary/10">
                   <Handshake className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="mb-2 text-xl font-semibold">Alianzas</h3>
@@ -302,7 +302,7 @@ export default function ContactPage() {
       {/* CTA Final Section */}
       <section className="bg-background py-20 text-foreground">
         <div className="container">
-          <div className="mx-auto max-w-2xl rounded-3xl border border-border/50 bg-background/50 p-12 text-center backdrop-blur-sm">
+          <div className="mx-auto max-w-2xl rounded-none border border-border/50 bg-background/50 p-12 text-center backdrop-blur-sm">
             <h2 className="mb-4 text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
               No dejes tu proyecto para mañana
             </h2>
