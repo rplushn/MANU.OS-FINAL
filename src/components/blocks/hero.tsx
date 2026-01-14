@@ -12,16 +12,16 @@ const CodeWindow = () => {
       initial={{ opacity: 0, y: 20, scale: 0.95 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-      className="relative w-full max-w-lg mx-auto lg:mx-0 overflow-hidden rounded-xl border border-white/20 bg-black/90 shadow-2xl backdrop-blur-sm"
+      className="relative w-full max-w-lg mx-auto lg:mx-0 overflow-hidden rounded-none border border-white/20 bg-black/90 shadow-2xl backdrop-blur-sm"
     >
       {/* Barra de título */}
       <div className="flex items-center gap-2 border-b border-white/10 bg-white/5 px-4 py-3">
         <div className="flex gap-1.5">
-          <div className="size-3 rounded-full bg-[#ff5f56]" />
-          <div className="size-3 rounded-full bg-[#ffbd2e]" />
-          <div className="size-3 rounded-full bg-[#27c93f]" />
+          <div className="size-3 rounded-none bg-[#ff5f56]" />
+          <div className="size-3 rounded-none bg-[#ffbd2e]" />
+          <div className="size-3 rounded-none bg-[#27c93f]" />
         </div>
-        <div className="ml-4 flex items-center gap-2 rounded bg-black/50 px-2 py-0.5 text-xs text-muted-foreground">
+        <div className="ml-4 flex items-center gap-2 rounded-none bg-black/50 px-2 py-0.5 text-xs text-muted-foreground">
           <Terminal className="size-3" />
           <span className="font-mono">koddix.config.ts</span>
         </div>
@@ -35,7 +35,7 @@ const CodeWindow = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5 }}
           >
-            <span className="text-purple-400">export</span> <span className="text-blue-400">const</span> <span className="text-yellow-300">Mission</span> <span className="text-white">=</span> <span className="text-yellow-300">()</span> <span className="text-purple-400">=&gt;</span> <span className="text-white">{"{"}</span>
+            <span className="text-purple-400">export</span> <span className="text-blue-400">const</span> <span className="text-yellow-300">Mission</span> <span className="text-white">=</span> <span className="text-yellow-300">()</span> <span className="text-purple-400">=&gt;</span> <span className="text-white">{"{"}}</span>
           </motion.div>
           
           <motion.div 
@@ -44,7 +44,7 @@ const CodeWindow = () => {
             transition={{ delay: 0.7 }}
             className="pl-4"
           >
-            <span className="text-purple-400">return</span> <span className="text-white">{"{"}</span>
+            <span className="text-purple-400">return</span> <span className="text-white">{"{"}}</span>
           </motion.div>
           
           <motion.div 
@@ -118,7 +118,7 @@ export const Hero = () => {
     <section className="relative overflow-x-hidden overflow-y-visible py-8 lg:py-12 mb-20 lg:mb-24">
       <div className="container relative z-10 mx-auto px-4 w-full max-w-7xl">
         {/* Card Principal del Hero */}
-        <div className="relative overflow-hidden w-full rounded-[2.5rem] bg-zinc-100 dark:bg-zinc-900 px-4 sm:px-6 pt-32 pb-24 shadow-sm md:px-12 lg:px-20 lg:pt-40 lg:pb-32 -mt-12">
+        <div className="relative overflow-hidden w-full rounded-none bg-zinc-100 dark:bg-zinc-900 px-4 sm:px-6 pt-32 pb-24 shadow-sm md:px-12 lg:px-20 lg:pt-40 lg:pb-32 -mt-12">
           
           {/* Elementos decorativos de fondo */}
           <div className="absolute -left-20 -top-20 size-96 rounded-full bg-blue-500/10 blur-3xl dark:bg-blue-500/20 pointer-events-none" />
@@ -132,7 +132,7 @@ export const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <span className="inline-flex items-center gap-2 rounded-full bg-white/80 px-4 py-1.5 text-sm font-medium text-zinc-800 shadow-sm backdrop-blur-sm dark:bg-white/10 dark:text-zinc-200">
+                <span className="inline-flex items-center gap-2 rounded-none bg-white/80 px-4 py-1.5 text-sm font-medium text-zinc-800 shadow-sm backdrop-blur-sm dark:bg-white/10 dark:text-zinc-200">
                   <Globe className="size-4 text-blue-500" />
                   Soluciones Tecnológicas Integrales
                 </span>
