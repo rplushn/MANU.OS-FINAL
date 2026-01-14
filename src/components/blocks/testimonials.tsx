@@ -49,7 +49,7 @@ const TestimonialCard = ({
   testimonial: (typeof items)[0];
 }) => {
   return (
-    <Card className="bg-muted mr-5 h-full w-[320px] shrink-0 overflow-hidden border-none sm:w-[380px] lg:w-[420px]">
+    <Card className="bg-muted mr-5 h-full w-[320px] shrink-0 overflow-hidden border-none rounded-none sm:w-[380px] lg:w-[420px]">
       <CardContent className="flex h-full flex-col p-0">
         <div className="relative h-[288px] lg:h-[328px]">
           <Image
