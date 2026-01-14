@@ -67,7 +67,7 @@ export const Pricing = ({ className }: { className?: string }) => {
 
         <div className="mt-8 grid items-start gap-5 text-start md:mt-12 md:grid-cols-3 lg:mt-20">
           {plans.map((plan) => (
-            <Card key={plan.name}>
+            <Card key={plan.name} className="rounded-none">
               <CardContent className="flex flex-col gap-7 px-6 py-5">
                 <div className="space-y-2">
                   <h3 className="text-foreground font-semibold">{plan.name}</h3>
