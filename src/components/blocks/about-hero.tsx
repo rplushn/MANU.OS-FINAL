@@ -1,37 +1,53 @@
 "use client";
 
 import { motion } from "motion/react";
-
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { handleWhatsAppClick } from "@/lib/whatsapp";
 
 export const AboutHero = () => {
   return (
-    <section className="py-28 lg:py-32 lg:pt-44">
-      <div className="container flex flex-col items-center gap-8 text-center">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl text-5xl font-bold tracking-tight md:text-6xl lg:text-7xl"
-        >
-          Transformando ideas en soluciones digitales con Koddix
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-muted-foreground max-w-2xl text-xl"
-        >
-          Somos un equipo apasionado por la tecnología y la innovación. Ayudamos a empresas en Honduras y el mundo a escalar sus operaciones.
-        </motion.p>
+    <section className="container py-20 lg:py-32">
+      <div className="grid gap-12 lg:grid-cols-2 lg:items-center" style={{ paddingTop: '100px' }}>
+        {/* Columna Izquierda - Texto */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          className="space-y-6"
         >
-          <Button size="lg" className="rounded-full">
-            Conoce al Equipo
-          </Button>
+          <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
+            Tecnología Mundial al Alcance de Honduras
+          </h1>
+          <p className="text-muted-foreground text-lg leading-relaxed md:text-xl">
+            KODDIX nació para ayudar a empresas y negocios hondureños a implementar tecnología de clase mundial de forma práctica y accesible.
+          </p>
+          <p className="text-muted-foreground text-base leading-relaxed">
+            Reducimos la brecha entre lo que antes parecía imposible, costoso y de proyectos largos, a tener las APIs mundiales integradas en plataformas propias construidas con los mismos códigos que usan HOY las empresas TOP del mundo.
+          </p>
+          <div className="pt-4">
+            <Button size="lg" onClick={handleWhatsAppClick}>
+              Contáctanos
+            </Button>
+          </div>
+        </motion.div>
+
+        {/* Columna Derecha - Imagen */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="relative"
+        >
+          <div className="relative overflow-hidden rounded-none shadow-2xl">
+            <Image
+              src="/features/frontend1.jpg"
+              alt="Equipo Koddix"
+              width={700}
+              height={500}
+              className="rounded-none object-cover w-full h-[400px] lg:h-[500px]"
+            />
+          </div>
         </motion.div>
       </div>
     </section>
