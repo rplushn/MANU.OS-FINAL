@@ -59,13 +59,13 @@ export default function ConsultoriaPage() {
                 oportunidades de automatización y áreas de mejora.
               </p>
             </div>
-            <div className="relative overflow-hidden rounded-2xl shadow-xl">
+            <div className="relative overflow-hidden rounded-none shadow-xl">
               <Image
                 src="/features/identificamos.jpg"
                 alt="Consultoría y Soporte Local"
                 width={800}
                 height={600}
-                className="rounded-2xl shadow-xl object-cover w-full h-[400px]"
+                className="rounded-none shadow-xl object-cover w-full h-[400px]"
               />
             </div>
           </div>
@@ -85,9 +85,9 @@ export default function ConsultoriaPage() {
             </p>
           </div>
           <div className="grid gap-8 grid-cols-1 md:grid-cols-3">
-            <Card>
+            <Card className="rounded-none">
               <CardHeader>
-                <div className="mb-4 flex size-16 items-center justify-center rounded-lg bg-muted text-3xl font-bold">
+                <div className="mb-4 flex size-16 items-center justify-center rounded-none bg-muted text-3xl font-bold">
                   1
                 </div>
                 <CardTitle>1. Auditoría Profunda</CardTitle>
@@ -99,9 +99,9 @@ export default function ConsultoriaPage() {
                 </p>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="rounded-none">
               <CardHeader>
-                <div className="mb-4 flex size-16 items-center justify-center rounded-lg bg-muted text-3xl font-bold">
+                <div className="mb-4 flex size-16 items-center justify-center rounded-none bg-muted text-3xl font-bold">
                   2
                 </div>
                 <CardTitle>2. Diseño de Arquitectura</CardTitle>
@@ -113,9 +113,9 @@ export default function ConsultoriaPage() {
                 </p>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="rounded-none">
               <CardHeader>
-                <div className="mb-4 flex size-16 items-center justify-center rounded-lg bg-muted text-3xl font-bold">
+                <div className="mb-4 flex size-16 items-center justify-center rounded-none bg-muted text-3xl font-bold">
                   3
                 </div>
                 <CardTitle>3. Plan de Acción</CardTitle>
@@ -143,10 +143,10 @@ export default function ConsultoriaPage() {
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <Card className="lg:col-span-2">
+            <Card className="lg:col-span-2 rounded-none">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
-                  <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-muted">
+                  <div className="flex size-12 shrink-0 items-center justify-center rounded-none bg-muted">
                     <Cloud className="size-6" />
                   </div>
                   <div>
@@ -158,10 +158,10 @@ export default function ConsultoriaPage() {
                 </div>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="rounded-none">
               <CardContent className="p-6">
                 <div className="flex flex-col items-start gap-4">
-                  <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-muted">
+                  <div className="flex size-12 shrink-0 items-center justify-center rounded-none bg-muted">
                     <Shield className="size-6" />
                   </div>
                   <div>
@@ -173,10 +173,10 @@ export default function ConsultoriaPage() {
                 </div>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="rounded-none">
               <CardContent className="p-6">
                 <div className="flex flex-col items-start gap-4">
-                  <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-muted">
+                  <div className="flex size-12 shrink-0 items-center justify-center rounded-none bg-muted">
                     <Code className="size-6" />
                   </div>
                   <div>
@@ -190,10 +190,10 @@ export default function ConsultoriaPage() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="md:col-span-2 lg:col-span-3">
+            <Card className="md:col-span-2 lg:col-span-3 rounded-none">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
-                  <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-muted">
+                  <div className="flex size-12 shrink-0 items-center justify-center rounded-none bg-muted">
                     <BarChart3 className="size-6" />
                   </div>
                   <div>
@@ -223,7 +223,7 @@ export default function ConsultoriaPage() {
           </div>
           <div className="mx-auto max-w-2xl">
             <div className="grid gap-4 md:grid-cols-2">
-              <Card>
+              <Card className="rounded-none">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-primary" />
@@ -236,7 +236,7 @@ export default function ConsultoriaPage() {
                   </div>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="rounded-none">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-primary" />
@@ -249,7 +249,7 @@ export default function ConsultoriaPage() {
                   </div>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="rounded-none">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-primary" />
@@ -262,7 +262,7 @@ export default function ConsultoriaPage() {
                   </div>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="rounded-none">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-primary" />
